@@ -2,10 +2,11 @@ class ApexDRIVER{
     constructor(domain){
         this.client=''
         this.apex=new Map();
-        this.apex.set("costume",domain+'/ords/admin/costume/costume/');
-        this.apex.set("client",domain+'/ords/admin/client/client/');
-        this.apex.set("message",domain+'/ords/admin/message/message/');
+        this.apex.set("costume",domain+'/ords/admin/costume/costume');
+        this.apex.set("client",domain+'/ords/admin/client/client');
+        this.apex.set("message",domain+'/ords/admin/message/message');
         this.xmlreq=new XMLHttpRequest();
+        this.xmlreq.responseType="json";    
     }
     read(key,callback,id){
         this.xmlreq.open("GET",this.apex.get(key)+id,true);
@@ -34,42 +35,6 @@ class ApexDRIVER{
             }
             if (this.xmlreq.readyState == 4 && this.xmlreq.status == 201) {
                 console.log("put or post");
-                callback(this.xmlreq.response);
-            }
-        }
-        try {
-            this.xmlreq.send(content);
-        } catch (error) {
-            console.log(error);
-        }
-    }
-    put(key,content,callback){
-        this.xmlreq.open("PUT",this.apex.get(key),true);
-        this.xmlreq.setRequestHeader('Content-Type', 'application/JSON');
-        this.xmlreq.onerror=()=>{
-            console.log(this.xmlreq.status);
-            console.log(this.xmlreq.response);
-        }
-        this.xmlreq.onreadystatechange=()=>{
-            if (this.xmlreq.readyState == 4 && this.xmlreq.status == 200) {
-                callback(this.xmlreq.response);
-            }
-        }
-        try {
-            this.xmlreq.send(content);
-        } catch (error) {
-            console.log(error);
-        }
-    }
-    delete(key,content,callback){
-        this.xmlreq.open("DELETE",this.apex.get(key),true);
-        this.xmlreq.setRequestHeader('Content-Type', 'application/JSON');
-        this.xmlreq.onerror=()=>{
-            console.log(this.xmlreq.status);
-            console.log(this.xmlreq.response);
-        }
-        this.xmlreq.onreadystatechange=()=>{
-            if (this.xmlreq.readyState == 4 && this.xmlreq.status == 200) {
                 callback(this.xmlreq.response);
             }
         }

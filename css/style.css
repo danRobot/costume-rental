@@ -1,0 +1,39 @@
+html,body {
+    /*background-color: #d6f2ff;*/
+    background-color: rgba(249, 248, 230, 0);
+    color: rgb(37, 37, 51);
+    font-family: "Montserrat", sans-serif;
+    font-size: 1vw;
+    /*overflow-x: hidden;*/
+}
+:root{
+    --pad:7em;
+}
+div{
+    border: solid red;
+    border-width: 0.1px;
+}
+h1{
+    justify-content: center;
+    text-align: center;
+    border: solid blue;
+    border-width: 0.1px;
+}
+p{
+    border: solid rgb(0, 71, 65);
+    border-width: 0.1px;
+    min-height: 0;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+li{
+    border: solid red;
+    border-width: 0.1px;
+    padding-left: var(--pad);
+    padding-right: var(--pad);
+}
