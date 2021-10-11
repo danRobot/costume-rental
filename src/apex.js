@@ -8,7 +8,7 @@ class ApexDRIVER{
         this.xmlreq=new XMLHttpRequest();
         this.xmlreq.responseType="json";    
     }
-    read(key,callback,id){
+    read(key,callback,id,params){
         this.xmlreq.open("GET",this.apex.get(key)+id,true);
         this.xmlreq.onerror=()=>{
             console.log(this.xmlreq.status);
@@ -16,12 +16,12 @@ class ApexDRIVER{
         }
         this.xmlreq.onreadystatechange=()=>{
             if (this.xmlreq.readyState == 4 && this.xmlreq.status == 200) {
-                callback(this.xmlreq.response);
+                callback(this.xmlreq.response,params);
             }
         }
         this.xmlreq.send();
     }
-    write(type,key,content,callback){
+    write(type,key,content,callback,params){
         this.xmlreq.open(type,this.apex.get(key),true);
         this.xmlreq.setRequestHeader('Content-Type', 'application/JSON');
         this.xmlreq.onerror=()=>{
@@ -31,11 +31,11 @@ class ApexDRIVER{
         this.xmlreq.onreadystatechange=()=>{
             if (this.xmlreq.readyState == 4 && this.xmlreq.status == 204) {
                 console.log("delete");
-                callback(this.xmlreq.response);
+                callback(this.xmlreq.response,params);
             }
             if (this.xmlreq.readyState == 4 && this.xmlreq.status == 201) {
                 console.log("put or post");
-                callback(this.xmlreq.response);
+                callback(this.xmlreq.response,params);
             }
         }
         try {

@@ -7,6 +7,7 @@
     <title>Alquiler</title>
 </head>
 <script src="src/apex.js"></script>
+<script src="src/maketable.js"></script>
 <body>
     <h1>Alquiler de Disfraces</h1>
     <ul class="menu">
@@ -16,7 +17,7 @@
     </ul>
 
     <table>
-        <thead border="0">
+        <thead>
             <tr>
                 <th>A</th>
                 <th>B</th>
@@ -36,7 +37,35 @@
             </tr>
         </tbody>
     </table>
-    
+
+    <table>
+        <thead>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <tr>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ame</td>
+                <td>ame</td>
+                <td>ame</td>
+            </tr>
+            <tr>
+                <td>ame</td>
+                <td>ame</td>
+                <td>ame</td>
+            </tr>
+        </tbody>
+    </table>
+    <button id='getcostume'>GET COSTUMES</button>
+    <button id='getclient'>GET CLIENTS</button>
+    <button id='getmessage'>GET MESSAGES</button>
+    <div id="tabla"></div>
 </body>
 <script src="get.js"></script>
 </html>
