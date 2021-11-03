@@ -1,71 +1,23 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Alquiler</title>
-</head>
-<script src="src/apex.js"></script>
-<script src="src/maketable.js"></script>
-<body>
-    <h1>Alquiler de Disfraces</h1>
-    <ul class="menu">
-        <li id="cosList">Lista de disfraces</li>
-        <li id="cliList">Lista de clientes</li>
-        <li id="mesList">Lista de mensajes</li>
-    </ul>
-
-    <table>
-        <thead>
-            <tr>
-                <th>A</th>
-                <th>B</th>
-                <th>C</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>ame</td>
-                <td>ame</td>
-                <td>ame</td>
-            </tr>
-            <tr>
-                <td>ame</td>
-                <td>ame</td>
-                <td>ame</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <table>
-        <thead>
-            <th>A</th>
-            <th>B</th>
-            <th>C</th>
-            <tr>
-                <th>A</th>
-                <th>B</th>
-                <th>C</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>ame</td>
-                <td>ame</td>
-                <td>ame</td>
-            </tr>
-            <tr>
-                <td>ame</td>
-                <td>ame</td>
-                <td>ame</td>
-            </tr>
-        </tbody>
-    </table>
-    <button id='getcostume'>GET COSTUMES</button>
-    <button id='getclient'>GET CLIENTS</button>
-    <button id='getmessage'>GET MESSAGES</button>
-    <div id="tabla"></div>
-</body>
-<script src="get.js"></script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Alquiler</title>
+    </head>
+    <script src="src/apex.js"></script>
+    <script src="src/maketable.js"></script>
+    <body>
+        <h1>Alquiler de Disfraces</h1>
+        <ul class="menu">
+            <button class="custom-btn btn-1" id="getcostume">Lista de disfraces</button>
+            <button class="custom-btn btn-1" id="getclient">Lista de clientes</button>
+            <button class="custom-btn btn-1" id="getmessage">Lista de mensajes</button>
+        </ul>
+        <div id="tabla" class="tabcontainer"></div>
+        <button class="custom-btn btn-5">Editar</button>
+        <button class="custom-btn btn-6">Eliminar</button>
+    </body>
+    <script src="get.js"></script>
 </html>

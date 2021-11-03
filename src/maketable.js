@@ -21,10 +21,41 @@ function makeTable(response,params) {
             row_item.innerHTML=item;
             row.appendChild(row_item);
         }
+        var options=document.createElement('div');
+        var edit=document.createElement('button');
+        edit.innerHTML='editar';
+        var del=document.createElement('button');
+        del.innerHTML='borrar';
+        edit.className='custom-btn btn-5';
+        del.className='custom-btn btn-6';
+        edit.onclick=(e)=>{
+            editar(element['id']);
+        };
+        del.onclick=(e)=>{
+            borrar(element['id']);
+        };
+        options.appendChild(edit);
+        options.appendChild(del);
+        options.style.display='flex';
+        options.style.height='100%'
+        options.style.justifyContent='center'
+        row.appendChild(options);
+        row.id=element['id'];
         console.log("row",row);
         body.appendChild(row);
     }
     var tabla=document.getElementById("tabla");
     tabla.innerHTML='';
+    body.onclick=(e)=>{
+        console.log('target',e.target);
+    }
     tabla.appendChild(table);
+}
+
+function borrar(id) {
+    alert(id);
+}
+
+function editar(id){
+    alert(id);
 }
