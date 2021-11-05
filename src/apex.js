@@ -1,15 +1,19 @@
-class ApexDRIVER{
+class DRIVER{
     constructor(domain){
         this.client=''
-        this.apex=new Map();
-        this.apex.set("costume",domain+'/ords/admin/costume/costume');
-        this.apex.set("client",domain+'/ords/admin/client/client');
-        this.apex.set("message",domain+'/ords/admin/message/message');
+        this.tables=new Map();
+        this.tables.set("admins",domain+'/api/Admins/all');
+        this.tables.set("category",domain+'/api/Category/all');
+        this.tables.set("client",domain+'/api/Client/all');
+        this.tables.set("costume",domain+'/api/Costume/all');
+        this.tables.set("message",domain+'/api/Message/all');
+        this.tables.set("reservation",domain+'/api/Reservation/all');
+        this.tables.set("score",domain+'/api/Score/all');
         this.xmlreq=new XMLHttpRequest();
         this.xmlreq.responseType="json";    
     }
     read(key,callback,id,params){
-        this.xmlreq.open("GET",this.apex.get(key)+id,true);
+        this.xmlreq.open("GET",this.tables.get(key)+id,true);
         this.xmlreq.onerror=()=>{
             console.log(this.xmlreq.status);
             console.log(this.xmlreq.response);
@@ -22,7 +26,7 @@ class ApexDRIVER{
         this.xmlreq.send();
     }
     write(type,key,content,callback,params){
-        this.xmlreq.open(type,this.apex.get(key),true);
+        this.xmlreq.open(type,this.tables.get(key),true);
         this.xmlreq.setRequestHeader('Content-Type', 'application/JSON');
         this.xmlreq.onerror=()=>{
             console.log(this.xmlreq.status);
