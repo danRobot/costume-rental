@@ -1,4 +1,4 @@
-var driver=new DRIVER('https://localhost:8080');
+var driver=new DRIVER('localhost:8080');
 
 let listacostume=document.getElementById("cosList");
 let listaclients=document.getElementById("cliList");
