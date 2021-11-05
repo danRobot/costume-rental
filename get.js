@@ -20,11 +20,19 @@ getclient.onclick=()=>{
     driver.read("client",makeTable,'',clientParams);
 }
 getmessage.onclick=()=>{
+<<<<<<< HEAD
     driver.read('message',makeTable,'',messageParams);
 }
 
 window.addEventListener('load',()=>{
     driver.read("costume",makeTable,'',costumeParams);
+=======
+    apex.read('message',makeTable,'',messageParams);
+}
+
+window.addEventListener('load',()=>{
+    apex.read("costume",makeTable,'',costumeParams);
+>>>>>>> 0542734147d425380e7b226e68530a8df0e8c3a7
 })
 /*window.addEventListener('change',()=>{
     apex.read("costume",makeTable,'',costumeParams);
