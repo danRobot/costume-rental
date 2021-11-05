@@ -1,4 +1,4 @@
-var driver=new DRIVER('localhost:8080');
+var driver=new DRIVER('http://localhost:8080');
 
 let listacostume=document.getElementById("cosList");
 let listaclients=document.getElementById("cliList");
@@ -7,6 +7,9 @@ let listamessage=document.getElementById("mesList");
 let getcostume=document.getElementById("getcostume");
 let getclient=document.getElementById("getclient");
 let getmessage=document.getElementById("getmessage");
+
+let getreserv=document.getElementById("getreserv");
+let getreport=document.getElementById("getreport");
 
 var costumeParams={'tablename':'costume','Nombre':'name','Marca':'brand','Modelo':'model','Categoria':'category_id'};
 var clientParams={'tablename':'client','Nombre':'name','Correo':'email','Edad':'age'};

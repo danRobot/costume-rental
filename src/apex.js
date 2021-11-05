@@ -20,6 +20,7 @@ class DRIVER{
         }
         this.xmlreq.onreadystatechange=()=>{
             if (this.xmlreq.readyState == 4 && this.xmlreq.status == 200) {
+                console.log(this.xmlreq.response);
                 callback(this.xmlreq.response,params);
             }
         }
