@@ -1,4 +1,4 @@
-var driver=new DRIVER('http://155.248.209.25/:8080');
+var driver=new DRIVER('http://155.248.209.25:8080');
 
 let listacostume=document.getElementById("cosList");
 let listaclients=document.getElementById("cliList");
